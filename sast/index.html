@@ -784,19 +784,19 @@
 <ul>
 <li><strong>Risk:</strong> Medium  </li>
 <li><strong>Affected URLs:</strong> <code>/</code>, <code>/robots.txt</code>, <code>/sitemap.xml</code>  </li>
-<li><strong>Description:</strong> Protects against XSS and data injection attacks.  </li>
+<li><strong>Description:</strong> CSP is a security feature that helps prevent attacks like Cross-Site Scripting (XSS) and data injection by specifying trusted sources of content for a website. When the CSP header is not set, browsers have no instructions on which content is safe, leaving the site vulnerable. Adding a CSP header mitigates these risks by restricting the sources of scripts, styles, images, and other resources.</li>
 </ul>
 <h4 id="2-missing-anti-clickjacking-header">2. Missing Anti-clickjacking Header</h4>
 <ul>
 <li><strong>Risk:</strong> Medium  </li>
 <li><strong>Affected URL:</strong> <code>/</code>  </li>
-<li><strong>Description:</strong> Page is vulnerable to clickjacking attacks.  </li>
+<li><strong>Description:</strong> The page is vulnerable to clickjacking attacks, where an attacker could trick users into interacting with hidden elements. Adding the X-Frame-Options or Content-Security-Policy frame-ancestors header can prevent this.</li>
 </ul>
 <h4 id="3-subresource-integrity-sri-attribute-missing">3. Subresource Integrity (SRI) Attribute Missing</h4>
 <ul>
 <li><strong>Risk:</strong> Medium  </li>
 <li><strong>Affected URL:</strong> <code>/</code> (external CSS/JS assets)  </li>
-<li><strong>Description:</strong> External resources can be tampered with if integrity checks are missing.  </li>
+<li><strong>Description:</strong> External resources can be tampered with if integrity checks are missing. Using the integrity attribute ensures that the resource loaded matches the expected hash, preventing malicious modifications.</li>
 </ul>
 <p><strong>Next:</strong> <a href="../test/">Test Planning</a></p>
 
