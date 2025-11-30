@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#employee-reimursement-system-use-case-documentation" class="md-skip">
+        <a href="#employee-reimbursement-system-use-case-documentation" class="md-skip">
           Skip to content
         </a>
       
@@ -329,9 +329,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-employee-reimursement-system-aims-to" class="md-nav__link">
+  <a href="#the-employee-reimbursement-system-aims-to" class="md-nav__link">
     <span class="md-ellipsis">
-      The Employee Reimursement System aims to:
+      The Employee Reimbursement System aims to:
     </span>
   </a>
   
@@ -628,9 +628,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-employee-reimursement-system-aims-to" class="md-nav__link">
+  <a href="#the-employee-reimbursement-system-aims-to" class="md-nav__link">
     <span class="md-ellipsis">
-      The Employee Reimursement System aims to:
+      The Employee Reimbursement System aims to:
     </span>
   </a>
   
@@ -801,14 +801,14 @@
 
 
 
-<h1 id="employee-reimursement-system-use-case-documentation"><strong>Employee Reimursement System – Use Case Documentation</strong></h1>
+<h1 id="employee-reimbursement-system-use-case-documentation"><strong>Employee Reimbursement System – Use Case Documentation</strong></h1>
 <h3 id="purpose"><strong>Purpose</strong></h3>
-<p>This document describes the key <strong>use cases</strong> for the <strong>Employee Reimursement System</strong>.<br />
+<p>This document describes the key <strong>use cases</strong> for the <strong>Employee Reimbursement System</strong>.<br />
 The goal is to simplify and digitize the organization’s reimbursement process by replacing manual Google Forms and emails with a transparent, efficient, and centralized digital system.</p>
 <h3 id="business-overview"><strong>Business Overview</strong></h3>
-<p>Currently, employees submit travel or work-related reimbursement claims manually using forms or spreadsheets.<br />
+<p>Currently, employees submit travel or work-related reimbursement claims manually using google forms or spreadsheets.<br />
 This process is slow, error-prone, and lacks visibility for both employees and administrators.</p>
-<h4 id="the-employee-reimursement-system-aims-to">The <strong>Employee Reimursement System</strong> aims to:</h4>
+<h4 id="the-employee-reimbursement-system-aims-to">The <strong>Employee Reimbursement System</strong> aims to:</h4>
 <ul>
 <li>Reduce manual effort and increase operational efficiency.  </li>
 <li>Provide better transparency and accountability.  </li>
@@ -819,25 +819,22 @@ This process is slow, error-prone, and lacks visibility for both employees and a
 <h4 id="actors"><strong>Actors</strong></h4>
 <ul>
 <li><strong>Employee</strong> – Staff member submitting a reimbursement request.  </li>
-<li><strong>System</strong> – The Employee Reimursement System that manages reimbursement request and expenses.  </li>
 <li><strong>Admin</strong> – Reviewer who validates and approves or rejects the reimbursement request.</li>
 </ul>
 <h4 id="goal"><strong>Goal</strong></h4>
-<p>To allow employees to easily create, manage, and submit reimbursement requests for business-related trips or expenses.</p>
+<p>To allow employees to create, manage, and submit reimbursement requests for business-related travel or expenses.</p>
 <h4 id="scenario"><strong>Scenario</strong></h4>
 <ol>
 <li>The employee logs into the system.  </li>
-<li>Creates a new <strong>reimbursement request</strong> record.  </li>
+<li>The employee creates a new <strong>reimbursement request</strong> record.  </li>
 <li>Adds one or more <strong>expenses</strong> under the trip (e.g., travel, accommodation, meals).   </li>
-<li>Can <strong>edit or delete</strong> expenses anytime before submission.  </li>
+<li>The employee can <strong>edit or delete</strong> expenses anytime before submission.  </li>
 <li>Once finalized, the employee <strong>submits</strong> the reimbursement request for admin approval.  </li>
-<li>The system stores the request, updates its status to <strong>Submitted</strong>, and notifies the admin.  </li>
+<li>The system stores the request and updates its status to <strong>Submitted</strong>. </li>
 </ol>
 <h4 id="preconditions"><strong>Preconditions</strong></h4>
 <ul>
 <li>The employee must be logged into the system.  </li>
-<li>The reimbursement request must contain at least one expense.  </li>
-<li>Reimbursement policies must be defined by the organization.  </li>
 </ul>
 <h4 id="postconditions"><strong>Postconditions</strong></h4>
 <ul>
@@ -848,9 +845,8 @@ This process is slow, error-prone, and lacks visibility for both employees and a
 <h3 id="use-case-2-admin-approve-or-reject-reimbursement-request"><strong>Use Case 2: Admin – Approve or Reject Reimbursement Request</strong></h3>
 <h4 id="actors_1"><strong>Actors</strong></h4>
 <ul>
-<li><strong>Admin / Finance Department</strong> – Authorized user who reviews and validates claims.  </li>
+<li><strong>Admin</strong> – Authorized user who reviews and validates claims.  </li>
 <li><strong>Employee</strong> – Claim submitter who receives feedback. </li>
-<li><strong>System</strong> – Handles record updates, notifications, and data logging.</li>
 </ul>
 <h4 id="goal_1"><strong>Goal</strong></h4>
 <p>To ensure that all submitted reimbursement requests are reviewed and processed efficiently while maintaining compliance with company reimbursement policies.</p>
@@ -858,7 +854,7 @@ This process is slow, error-prone, and lacks visibility for both employees and a
 <ol>
 <li>The admin logs into the system.  </li>
 <li>Views the list of <strong>submitted reimbursement requests</strong>.  </li>
-<li>Selects a trip to review its details, expenses, and uploaded receipts.  </li>
+<li>Selects a trip to review its details and expenses.  </li>
 <li>Verifies the validity and compliance of expenses.  </li>
 <li>Approves or rejects the reimbursement request.  </li>
 <li>The system updates the status to <strong>Approved</strong> or <strong>Rejected</strong> and notifies the employee.  </li>
@@ -868,7 +864,6 @@ This process is slow, error-prone, and lacks visibility for both employees and a
 <ul>
 <li>The admin must be logged into the system.  </li>
 <li>At least one reimbursement request must exist for review.  </li>
-<li>Expense approval policies must be pre-configured in the system.  </li>
 </ul>
 <h4 id="postconditions_1"><strong>Postconditions</strong></h4>
 <ul>
@@ -876,7 +871,7 @@ This process is slow, error-prone, and lacks visibility for both employees and a
 <li>All actions are recorded in the database for audit purposes.  </li>
 </ul>
 <h3 id="overall-outcome"><strong>Overall Outcome</strong></h3>
-<p>The <strong>Employee Reimursement System</strong> makes the reimbursement process faster, easier, and more transparent for everyone in the organization.<br />
+<p>The <strong>Employee Reimbursement System</strong> makes the reimbursement process faster, easier, and more transparent for everyone in the organization.<br />
 Instead of using Google Forms or emails, all tasks, from expense submission to final approval, happen in one system.</p>
 <h4 id="with-this-system"><strong>With this system:</strong></h4>
 <ul>

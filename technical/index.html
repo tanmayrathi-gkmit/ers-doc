@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#employee-reimursement-system-technical-documentation" class="md-skip">
+        <a href="#employee-reimbursement-system-technical-documentation" class="md-skip">
           Skip to content
         </a>
       
@@ -1077,7 +1077,7 @@
 
 
 
-<h1 id="employee-reimursement-system-technical-documentation"><strong>Employee Reimursement System — Technical Documentation</strong></h1>
+<h1 id="employee-reimbursement-system-technical-documentation"><strong>Employee Reimbursement System — Technical Documentation</strong></h1>
 <h2 id="tech-stack"><strong>Tech Stack</strong></h2>
 <h3 id="1-frontend"><strong>1. Frontend</strong></h3>
 <table>
@@ -1215,7 +1215,7 @@
 </tbody>
 </table>
 <h2 id="data-modeling"><strong>Data Modeling</strong></h2>
-<p>The Employee Reimursement System (ERS) uses a structured relational schema built on PostgreSQL to ensure data integrity, consistency, and relational linkage between entities.</p>
+<p>The Employee Reimbursement System (ERS) uses a structured relational schema built on PostgreSQL to ensure data integrity, consistency, and relational linkage between entities.</p>
 <h3 id="why-structured-database"><strong>Why Structured Database</strong></h3>
 <ul>
 <li>Financial and transactional data require accuracy, consistency, and referential integrity.</li>
@@ -1236,7 +1236,7 @@
 <h3 id="architecture-diagram"><strong>Architecture Diagram</strong></h3>
 <p><img alt="Architecture Diagram" src="../assets/images/architecture_diagram.svg" style="display:block; margin-left:auto; margin-right:auto;" width="100%" /></p>
 <h2 id="data-flow"><strong>Data Flow</strong></h2>
-<p>The Employee Reimursement System (ERS) follows a centralized, role-driven data flow connecting the frontend, backend, and database layers.
+<p>The Employee Reimbursement System (ERS) follows a centralized, role-driven data flow connecting the frontend, backend, and database layers.
 All interactions occur through authenticated REST API endpoints secured with JWT tokens.</p>
 <h3 id="overview"><strong>Overview</strong></h3>
 <p>The system consists of two user types — Employee and Admin — both interacting with the same backend and database through different process flows:</p>
@@ -1325,7 +1325,7 @@ All interactions occur through authenticated REST API endpoints secured with JWT
 </tbody>
 </table>
 <h2 id="authentication"><strong>Authentication</strong></h2>
-<p>The Employee Reimursement System (ERS) uses JWT (JSON Web Token)–based authentication implemented through Django REST Framework Simple JWT.<br />
+<p>The Employee Reimbursement System (ERS) uses JWT (JSON Web Token)–based authentication implemented through Django REST Framework Simple JWT.<br />
 This ensures stateless, secure communication between the frontend and backend, with short-lived access tokens and refresh tokens for session continuity.</p>
 <h3 id="authentication-process-overview"><strong>Authentication Process Overview</strong></h3>
 <ol>
@@ -1348,7 +1348,7 @@ This ensures stateless, secure communication between the frontend and backend, w
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="authorization"><strong>Authorization</strong></h2>
-<p>After authentication, the Employee Reimursement System (ERS) enforces role-based authorization to control access to system resources.<br />
+<p>After authentication, the Employee Reimbursement System (ERS) enforces role-based authorization to control access to system resources.<br />
 Every authenticated user is assigned a role (<code>admin</code> or <code>employee</code>), which defines their permissions and scope of operations within the application.</p>
 <h3 id="authorization-overview"><strong>Authorization Overview</strong></h3>
 <h4 id="authorization-ensures-that">Authorization ensures that:</h4>
