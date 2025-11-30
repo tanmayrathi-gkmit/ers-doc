@@ -1,0 +1,1509 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../bus-sys-use/">
+      
+      
+        <link rel="next" href="../api/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Technical Documentation - Reimbursement Tracking System</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#employee-reimursement-system-technical-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Reimbursement Tracking System" class="md-header__button md-logo" aria-label="Reimbursement Tracking System" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Reimbursement Tracking System
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Technical Documentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Reimbursement Tracking System" class="md-nav__button md-logo" aria-label="Reimbursement Tracking System" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Reimbursement Tracking System
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Functional Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bus-sys-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Case
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Technical Documentation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technical Documentation
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tech-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tech Stack
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tech Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Frontend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Backend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-tools-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Tools &amp; Infrastructure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Modeling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Modeling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-structured-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Structured Database
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Diagram
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entity-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entity Descriptions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectural Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architectural Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture Diagram
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow Diagram
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flow Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flow Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication (JWT)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#employee-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Employee Operations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admin Operations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-process-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Process Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-configuration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token Configuration (Example)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authorization-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorization Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authorization Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authorization-ensures-that" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorization ensures that:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles-and-access-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roles and Access Levels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permissions-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissions Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-in-django-rest-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation in Django REST Framework
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation in Django REST Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-authentication-and-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default Authentication and Permissions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-and-access-control-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security and Access Control Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sast & Dast Reports
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Test Planning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tech-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tech Stack
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tech Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Frontend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Backend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-tools-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Tools &amp; Infrastructure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Modeling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Modeling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-structured-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Structured Database
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Diagram
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entity-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entity Descriptions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectural Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architectural Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture Diagram
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow Diagram
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flow Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flow Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication (JWT)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#employee-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Employee Operations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admin Operations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-process-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Process Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-configuration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token Configuration (Example)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authorization-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorization Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authorization Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authorization-ensures-that" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorization ensures that:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles-and-access-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roles and Access Levels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permissions-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissions Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-in-django-rest-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation in Django REST Framework
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation in Django REST Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-authentication-and-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default Authentication and Permissions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-and-access-control-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security and Access Control Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="employee-reimursement-system-technical-documentation"><strong>Employee Reimursement System — Technical Documentation</strong></h1>
+<h2 id="tech-stack"><strong>Tech Stack</strong></h2>
+<h3 id="1-frontend"><strong>1. Frontend</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Technology Used</th>
+<th>Stable Version</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Markup &amp; Styling</strong></td>
+<td>HTML5, CSS3</td>
+<td>Latest</td>
+<td>Used to create a responsive and accessible user interface.</td>
+</tr>
+<tr>
+<td><strong>Scripting</strong></td>
+<td>JavaScript (Vanilla JS)</td>
+<td>ES6+</td>
+<td>Handles API integration, form validation, and user interactions.</td>
+</tr>
+<tr>
+<td><strong>Design Framework</strong></td>
+<td>Bootstrap (optional)</td>
+<td>5.x</td>
+<td>Optional use for layout, grid, and responsive design.</td>
+</tr>
+<tr>
+<td><strong>PWA Support</strong></td>
+<td>Web App Manifest, Service Worker</td>
+<td>—</td>
+<td>Enables offline functionality and mobile compatibility.</td>
+</tr>
+<tr>
+<td><strong>Testing Framework</strong></td>
+<td>Jest</td>
+<td>Latest</td>
+<td>Used for unit and integration testing of frontend logic and API interactions.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-backend"><strong>2. Backend</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Technology Used</th>
+<th>Stable Version</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Framework</strong></td>
+<td>Django REST Framework (DRF)</td>
+<td>3.16</td>
+<td>Handles APIs, authentication, and business logic.</td>
+</tr>
+<tr>
+<td><strong>Language</strong></td>
+<td>Python</td>
+<td>3.13.7</td>
+<td>Backend development language for logic and integration.</td>
+</tr>
+<tr>
+<td><strong>Authentication</strong></td>
+<td>Simple JWT (DRF)</td>
+<td>5.5.1</td>
+<td>Provides stateless user authentication via JWT tokens.</td>
+</tr>
+<tr>
+<td><strong>Database</strong></td>
+<td>PostgreSQL</td>
+<td>16</td>
+<td>Stores structured data with relational integrity.</td>
+</tr>
+<tr>
+<td><strong>ORM</strong></td>
+<td>Django ORM</td>
+<td>Included</td>
+<td>Simplifies database queries and migrations.</td>
+</tr>
+<tr>
+<td><strong>Testing Framework</strong></td>
+<td>Pytest</td>
+<td>8.x</td>
+<td>Used for backend testing and validation of API endpoints.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-tools-infrastructure"><strong>3. Tools &amp; Infrastructure</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Technology Used</th>
+<th>Stable Version</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Version Control</strong></td>
+<td>Git + GitHub</td>
+<td>Latest</td>
+<td>Used for source code management and collaboration.</td>
+</tr>
+<tr>
+<td><strong>CI/CD Pipeline</strong></td>
+<td>GitHub Actions</td>
+<td>Latest</td>
+<td>Automates build, testing, and deployment workflows.</td>
+</tr>
+<tr>
+<td><strong>Package Management</strong></td>
+<td>pip</td>
+<td>25.2</td>
+<td>Handles dependency installation and environment management.</td>
+</tr>
+<tr>
+<td><strong>IDE / Code Editor</strong></td>
+<td>VS Code</td>
+<td>Latest</td>
+<td>Development environment for writing and debugging code.</td>
+</tr>
+<tr>
+<td><strong>API Testing</strong></td>
+<td>Postman</td>
+<td>Latest</td>
+<td>Tool for testing, documenting, and debugging APIs.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-modeling"><strong>Data Modeling</strong></h2>
+<p>The Employee Reimursement System (ERS) uses a structured relational schema built on PostgreSQL to ensure data integrity, consistency, and relational linkage between entities.</p>
+<h3 id="why-structured-database"><strong>Why Structured Database</strong></h3>
+<ul>
+<li>Financial and transactional data require accuracy, consistency, and referential integrity.</li>
+<li>PostgreSQL enforces ACID compliance, foreign keys, and data constraints, critical for reimbursement and audit workflows.</li>
+<li>Complex queries (filtering requests, aggregating expenses, generating reports) are efficiently handled using SQL joins.</li>
+</ul>
+<h3 id="schema-diagram"><strong>Schema Diagram</strong></h3>
+<p><img alt="Schema Diagram" src="../assets/images/schma-final.svg" style="display:block; margin-left:auto; margin-right:auto;" width="50%" /></p>
+<h3 id="entity-descriptions"><strong>Entity Descriptions</strong></h3>
+<p><strong>1. User:</strong> Represents both employees and admins. Each user has unique credentials and a defined role that controls access within the system. The emp_id field allows mapping users to internal company records.</p>
+<p><strong>2. Request:</strong> Stores details of each reimbursement request. Every request is linked to one user and can include multiple expense entries. Requests move through different statuses — draft, submitted, approved, or rejected — based on workflow actions.</p>
+<p><strong>3. Expenses:</strong> Contains detailed records of individual expenses under a request. Each expense entry includes its title, category, description, amount.</p>
+<h2 id="architectural-overview"><strong>Architectural Overview</strong></h2>
+<p>The system is composed of three primary layers:</p>
+<p><strong>1. Frontend:</strong> A lightweight web interface built with HTML, CSS, and JavaScript. Communicates with the backend via REST APIs. Implements form handling, JWT-based session management, and responsive design.</p>
+<p><strong>2. Backend:</strong> Developed using Django REST Framework (DRF). Handles authentication, authorization, business logic, and CRUD operations for all entities (Users, Requests, Expenses).</p>
+<p><strong>3. Database:</strong> PostgreSQL serves as the structured data store ensuring relational integrity, transactional safety, and auditability.</p>
+<h3 id="architecture-diagram"><strong>Architecture Diagram</strong></h3>
+<p><img alt="Architecture Diagram" src="../assets/images/architecture_diagram.svg" style="display:block; margin-left:auto; margin-right:auto;" width="100%" /></p>
+<h2 id="data-flow"><strong>Data Flow</strong></h2>
+<p>The Employee Reimursement System (ERS) follows a centralized, role-driven data flow connecting the frontend, backend, and database layers.
+All interactions occur through authenticated REST API endpoints secured with JWT tokens.</p>
+<h3 id="overview"><strong>Overview</strong></h3>
+<p>The system consists of two user types — Employee and Admin — both interacting with the same backend and database through different process flows:</p>
+<ul>
+<li><strong>Employee:</strong> creates, edits, and submits reimbursement requests along with related expenses.</li>
+<li><strong>Admin:</strong> reviews submitted requests, checks expense details, and approves or rejects them.</li>
+<li><strong>Database:</strong> stores all user, request, and expense data while maintaining referential integrity.</li>
+</ul>
+<h3 id="data-flow-diagram"><strong>Data Flow Diagram</strong></h3>
+<p><img alt="Data Flow Diagram" src="../assets/images/data_flow_diagram.svg" style="display:block; margin-left:auto; margin-right:auto;" width="100%" /></p>
+<h3 id="flow-description"><strong>Flow Description</strong></h3>
+<h4 id="authentication-jwt">Authentication (JWT)</h4>
+<ul>
+<li>Both Employee and Admin log in with credentials.</li>
+<li>The backend validates users against the users table.</li>
+<li>If valid, it generates a JWT token (Access + Refresh).</li>
+<li>All further requests include this token for secure authorization.</li>
+</ul>
+<h4 id="employee-operations">Employee Operations</h4>
+<ul>
+<li>Employee creates or edits a reimbursement request (stored in requests table) while its status is Draft.</li>
+<li>Employee can add, view, or modify expenses under that request (stored in expenses table).</li>
+<li>When ready, the employee submits the request, changing its status to Submitted in the database.</li>
+<li>Once submitted, the employee can only view the request and related expenses — editing is disabled.</li>
+</ul>
+<h4 id="admin-operations">Admin Operations</h4>
+<ul>
+<li>Admin views all submitted requests.</li>
+<li>Admin opens a request to view associated expenses.</li>
+<li>Admin verifies the claim and updates its status to either Approved or Rejected.</li>
+<li>This status update is reflected in the requests table and visible to the employee.</li>
+</ul>
+<h3 id="data-flow-summary"><strong>Data Flow Summary</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Actor</th>
+<th>Process</th>
+<th>Database Interaction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Employee / Admin</td>
+<td>Login &amp; Authentication</td>
+<td>Validate user and issue JWT token</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Employee</td>
+<td>Create / Edit / Delete Request</td>
+<td>Insert or update record in <code>requests</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Employee</td>
+<td>Add / Edit / View Expenses</td>
+<td>Insert or update record in <code>expenses</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Employee</td>
+<td>Submit Request</td>
+<td>Update <code>requests.status = 'submitted'</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Admin</td>
+<td>View Submitted Requests</td>
+<td>Query <code>requests.status = 'submitted'</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Admin</td>
+<td>View Expenses</td>
+<td>Query linked <code>expenses</code> for a request</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Admin</td>
+<td>Approve / Reject Request</td>
+<td>Update <code>requests.status</code> accordingly</td>
+</tr>
+</tbody>
+</table>
+<h2 id="authentication"><strong>Authentication</strong></h2>
+<p>The Employee Reimursement System (ERS) uses JWT (JSON Web Token)–based authentication implemented through Django REST Framework Simple JWT.<br />
+This ensures stateless, secure communication between the frontend and backend, with short-lived access tokens and refresh tokens for session continuity.</p>
+<h3 id="authentication-process-overview"><strong>Authentication Process Overview</strong></h3>
+<ol>
+<li>The user (either Employee or Admin) enters their username and password in the login form.  </li>
+<li>The frontend sends these credentials to the backend authentication endpoint (<code>/api/auth/login/</code>).  </li>
+<li>The backend validates the credentials against the <code>users</code> table.  </li>
+<li>If valid, the backend generates both an Access Token and a Refresh Token using Simple JWT.  </li>
+<li>These tokens are returned to the frontend, which stores them securely (typically in <code>localStorage</code>).  </li>
+<li>For subsequent API requests, the frontend includes the <code>Authorization: Bearer &lt;access_token&gt;</code> header.  </li>
+<li>If the access token expires, the frontend uses the refresh token to obtain a new one.  </li>
+<li>If credentials are invalid, the backend returns an appropriate error message (HTTP 401 Unauthorized).</li>
+</ol>
+<h3 id="token-configuration-example"><strong>Token Configuration (Example)</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="n">SIMPLE_JWT</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;ACCESS_TOKEN_LIFETIME&quot;</span><span class="p">:</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
+    <span class="s2">&quot;REFRESH_TOKEN_LIFETIME&quot;</span><span class="p">:</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">8</span><span class="p">),</span>
+    <span class="s2">&quot;ROTATE_REFRESH_TOKENS&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;BLACKLIST_AFTER_ROTATION&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;UPDATE_LAST_LOGIN&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="authorization"><strong>Authorization</strong></h2>
+<p>After authentication, the Employee Reimursement System (ERS) enforces role-based authorization to control access to system resources.<br />
+Every authenticated user is assigned a role (<code>admin</code> or <code>employee</code>), which defines their permissions and scope of operations within the application.</p>
+<h3 id="authorization-overview"><strong>Authorization Overview</strong></h3>
+<h4 id="authorization-ensures-that">Authorization ensures that:</h4>
+<ul>
+<li>Employees can only access and manage their own reimbursement data.  </li>
+<li>Admins can view and manage all reimbursement requests except those still in draft status.  </li>
+<li>Only Admins can add new users to the system.  </li>
+</ul>
+<h3 id="roles-and-access-levels"><strong>Roles and Access Levels</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Description</th>
+<th>Access Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Admin</strong></td>
+<td>Administrative user with elevated privileges for user and request management.</td>
+<td>Can view all requests that are not in draft status (submitted, approved, rejected) and can add new users.</td>
+</tr>
+<tr>
+<td><strong>Employee</strong></td>
+<td>Regular user who creates and manages their own reimbursement requests and expenses.</td>
+<td>Can view all their requests, add expenses, edit draft requests, and submit requests for approval.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="permissions-matrix"><strong>Permissions Matrix</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Employee</th>
+<th>Admin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add new user</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>View users</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Create reimbursement request</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Edit draft request</td>
+<td>Yes (own only)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Submit request</td>
+<td>Yes (own only)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>View requests</td>
+<td>Yes (all own requests)</td>
+<td>Yes (all except drafts)</td>
+</tr>
+<tr>
+<td>Approve / reject request</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Add expenses to a request</td>
+<td>Yes (own, while draft)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Edit / delete expenses</td>
+<td>Yes (own, while draft)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>View expenses</td>
+<td>Yes (own)</td>
+<td>Yes (all linked to viewable requests)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="implementation-in-django-rest-framework"><strong>Implementation in Django REST Framework</strong></h3>
+<p>Authorization is implemented through <strong>custom permission classes</strong> combined with JWT authentication.</p>
+<h4 id="default-authentication-and-permissions"><strong>Default Authentication and Permissions</strong></h4>
+<div class="highlight"><pre><span></span><code><span class="n">REST_FRAMEWORK</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;DEFAULT_AUTHENTICATION_CLASSES&#39;</span><span class="p">:</span> <span class="p">(</span>
+        <span class="s1">&#39;rest_framework_simplejwt.authentication.JWTAuthentication&#39;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;DEFAULT_PERMISSION_CLASSES&#39;</span><span class="p">:</span> <span class="p">(</span>
+        <span class="s1">&#39;rest_framework.permissions.IsAuthenticated&#39;</span><span class="p">,</span>
+    <span class="p">),</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="security-and-access-control-summary"><strong>Security and Access Control Summary</strong></h3>
+<ul>
+<li><strong>Role-based access control (RBAC):</strong> Clearly separates administrative privileges from employee actions.</li>
+<li><strong>Backend-enforced permissions:</strong> Prevent unauthorized access regardless of client behavior.</li>
+<li><strong>Data isolation:</strong> Employees cannot view or modify other users’ data.</li>
+<li><strong>JWT token validation:</strong> Ensures all API interactions are authenticated and role-checked before execution.</li>
+</ul>
+<p><strong>Next:</strong> <a href="../api/">API Documentation</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        
+  <footer class="md-footer">
+    <div style="text-align:center; padding: 1em 0;">
+        Employee Reimbursement System
+    </div>
+  </footer>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
