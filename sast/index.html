@@ -447,18 +447,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-missing-anti-clickjacking-header" class="md-nav__link">
+  <a href="#2-subresource-integrity-sri-attribute-missing" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Missing Anti-clickjacking Header
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-subresource-integrity-sri-attribute-missing" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Subresource Integrity (SRI) Attribute Missing
+      2. Subresource Integrity (SRI) Attribute Missing
     </span>
   </a>
   
@@ -602,18 +593,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-missing-anti-clickjacking-header" class="md-nav__link">
+  <a href="#2-subresource-integrity-sri-attribute-missing" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Missing Anti-clickjacking Header
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-subresource-integrity-sri-attribute-missing" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Subresource Integrity (SRI) Attribute Missing
+      2. Subresource Integrity (SRI) Attribute Missing
     </span>
   </a>
   
@@ -765,11 +747,11 @@
 </tr>
 <tr>
 <td>Medium</td>
-<td>3</td>
+<td>2</td>
 </tr>
 <tr>
 <td>Low</td>
-<td>6</td>
+<td>2</td>
 </tr>
 <tr>
 <td>Informational</td>
@@ -777,7 +759,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Total Alerts:</strong> 15</p>
+<p><strong>Total Alerts:</strong> 8</p>
 <p><img alt="Dast Report" src="../assets/images/dast-report.png" style="display:block; margin-left:auto; margin-right:auto;" width="100%" /></p>
 <h3 id="priority-issues"><strong>Priority Issues</strong></h3>
 <h4 id="1-content-security-policy-csp-header-not-set">1. Content Security Policy (CSP) Header Not Set</h4>
@@ -786,13 +768,7 @@
 <li><strong>Affected URLs:</strong> <code>/</code>, <code>/robots.txt</code>, <code>/sitemap.xml</code>  </li>
 <li><strong>Description:</strong> CSP is a security feature that helps prevent attacks like Cross-Site Scripting (XSS) and data injection by specifying trusted sources of content for a website. When the CSP header is not set, browsers have no instructions on which content is safe, leaving the site vulnerable. Adding a CSP header mitigates these risks by restricting the sources of scripts, styles, images, and other resources.</li>
 </ul>
-<h4 id="2-missing-anti-clickjacking-header">2. Missing Anti-clickjacking Header</h4>
-<ul>
-<li><strong>Risk:</strong> Medium  </li>
-<li><strong>Affected URL:</strong> <code>/</code>  </li>
-<li><strong>Description:</strong> The page is vulnerable to clickjacking attacks, where an attacker could trick users into interacting with hidden elements. Adding the X-Frame-Options or Content-Security-Policy frame-ancestors header can prevent this.</li>
-</ul>
-<h4 id="3-subresource-integrity-sri-attribute-missing">3. Subresource Integrity (SRI) Attribute Missing</h4>
+<h4 id="2-subresource-integrity-sri-attribute-missing">2. Subresource Integrity (SRI) Attribute Missing</h4>
 <ul>
 <li><strong>Risk:</strong> Medium  </li>
 <li><strong>Affected URL:</strong> <code>/</code> (external CSS/JS assets)  </li>
